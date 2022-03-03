@@ -1,111 +1,259 @@
-* {
+*{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-a {
-    color: #fff;
-    text-decoration: none;
-    transition: 0.3s;
-}
-
-a:hover {
-    opacity: 0.7;
-}
-
-.logo {
-    font-size: 24px;
-    text-transform: uppercase;
-    letter-spacing: 4px;
-}
-
-.area {
-    color: #fff;
-    background-color: #23232e
-}
-nav {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    background-color: #23232e;
-    height: 8vh;
-}
-
-main {
-    background: url("../img/background.png") no-repeat center center;
+header{
+    width: 100%;
+    height: 100vh;
+    background-image: url('../img/bg.jpg');
+    background-color:	#1C1C1C;
+    background-position: center;
     background-size: cover;
-    height: 92vh;
 }
 
-.list{
-    list-style: none;
+a{
+    text-decoration: none;
+}
+
+header .menu{
+    position: fixed;
+    width: 100%;
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 45px;
 }
 
-.list li {
-    letter-spacing: 3px;
-    margin-left: 32px;
+header .menu li{
+    display: inline-block;
+    text-shadow: 5px #1C1C1C;
 }
 
-.mobile-menu {
-    display: none;
+header .menu a{
+    color: white;
+    padding: 5px 12px;
+    border-radius: 3px;
+    font-size: 15px;
+    transition: 200ms;
+}
+
+header .menu .ativo, header .menu a:hover{
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+    border-start-end-radius: 10px 8px ;
+    border-end-end-radius: 8px 10px;
+    border-start-start-radius: 10px 8px;
+    border-end-start-radius: 8px 10px;
+}
+
+.principal{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.principal h2{
+    padding: 10px 8px;
+    color: rgb(255, 255, 255);
+    font-size: 30px;
+    text-align: center;
+    text-shadow: 15px black;
+    transition: 460ms;
+    border: 0px solid black;
+    border-radius: 8px;
+    user-select: none;
+    cursor: pointer;
+    text-shadow: 1px solid #1C1C1C;
+}
+
+.principal h2:hover{
+    color: rgb(255, 255, 255);
+    background-color: rgba(255, 0, 0, 0.5);
+}
+
+.principal h3{
+    padding: 10px 8px;
+    text-align: center;
+    transition: 460ms;
+    border: 0px solid black;
+    border-radius: 8px;
+    user-select: none;
+    cursor: pointer;
+    font-size: 15px;
+    color: white;
+}
+
+.principal h3:hover{
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0.500);
+}
+
+.sobre h2{
+    font-size: 25px;
+    text-align: center;
+}
+
+.principal .sobre a{
+    color: white;
+    padding: 10px 18px;
+    display: inline-block;
+    border: 1px solid aqua;
+    border-radius: 3px;
+    margin-top: 20px;
+    transition: 200ms;
+}
+
+.sobre{
+    color: white;
+    padding: 10px 10px;
+    border-radius: 3px;
+    transition: 200ms;
+}
+
+.principal .sobre a:hover{
+    color: rgb(0, 0, 0);
+    background-color: rgb(0, 0, 0);
+    transition: 200ms;
+}
+
+#img {
+    height: 10%;
+    background-image: url('../img/background.png');
+    background-position: center;
+    background-size: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#img > img {
+    width: 60px;
+    margin-bottom: 20px;
+    animation: jumping 1s linear infinite;
     cursor: pointer;
 }
-.mobile-menu div {
-    width: 32px;
-    height: 2px;
-    background-color: #fff;
-    margin: 8px;
+
+@keyframes jumpping {
+    from {transform: translateY(-15px);}
+    50% {transform: translateY(0px);}
+    to {transform: translateY(-15px);}
 }
 
-@media (max-width: 999px) {
-    body {
-        overflow-x: hidden;
-    }
-    .list {
-        position: absolute;
-        top: 8vh;
-        right: 50vw;
-        height: 92vh;
-        background: #23232e;
-        align-items: center;
-        justify-content: space-around;
-        transform: translateX(100%);
-        transition: transform 0.3s ease-in;
-    }
-    .list li {
-        margin-left: 0;
-        opacity: 0;
-    }
-    .mobile-menu {
-        display: block;
-    }
+#conteudo {
+    height: 100vh;
 }
 
-.list.active {
-    transform: translateX(0);
+.button{
+    background-color: black;
 }
 
-@keyframes navLinkFade {
-    from {
-        opacity: 0;
-        transform: translateX(50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }  
+.sobre{
+    padding: 10px 8px;
+    border: 10px;
+    border-radius: 10px;
+    width: 10vw;
 }
 
-.mobile-menu.active .line1 {
-    transform: rotate(-45deg) translate(-8px, 8px);
+.Dev{
+    padding: 0vh 340px;
+    border: 1px white;
+    border-radius: 10px;
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
 }
 
-.mobile-menu.active .line2 {
-    opacity: 0;
+#img > img {
+    width: 55px;
+    height: 50px;
+    margin-bottom: 20px;
+    animation: jumping 1s linear infinite;
+    cursor: pointer;
 }
 
-.mobile-menu.active .line3 {
-    transform: rotate(45deg) translate(-5px, -7px)
+@keyframes jumping {
+    from {transform: translateY(-15px);}
+    50% {transform: translateY(0);}
+    to {transform: translateY(-15px);}
+}
+
+#conteudo {
+    height: 300px;
+}
+
+.principal h4{
+    padding: 10px 8px;
+    text-align: center;
+    transition: 460ms;
+    border: 0px solid black;
+    border-radius: 8px;
+    user-select: none;
+    cursor: pointer;
+    font-size: 30px;
+    color: white;
+    text-shadow: 1px solid black;
+}
+
+.principal h4:hover{
+    color: rgb(255, 255, 255);
+    background-color: rgba(255, 0, 0, 0.5);
+}
+
+.principal h5{
+    padding: 10px 8px;
+    text-align: center;
+    transition: 460ms;
+    border: 0px solid black;
+    border-radius: 8px;
+    user-select: none;
+    cursor: pointer;
+    font-size: 15px;
+    color: white;
+    text-shadow: 1px solid black;
+}
+
+.principal h5:hover{
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0.500);
+}
+
+.principal h6{
+    padding: 10px 8px;
+    text-align: center;
+    transition: 460ms;
+    border: 0px solid black;
+    border-radius: 8px;
+    user-select: none;
+    cursor: pointer;
+    font-size: 15px;
+    color: white;
+    text-shadow: 1px solid black;
+}
+
+.principal h6:hover{
+    color: rgb(255, 255, 255);
+    background-color: rgba(255, 0, 0, 0.5);
+}
+
+.principal h7{
+    padding: 10px 8px;
+    text-align: center;
+    transition: 460ms;
+    border: 0px solid black;
+    border-radius: 8px;
+    user-select: none;
+    cursor: pointer;
+    font-size: 15px;
+    color: white;
+    text-shadow: 1px solid black;
+}
+
+.principal h7t:hover{
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0.500);
 }
