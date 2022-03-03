@@ -253,7 +253,7 @@ header .menu .ativo, header .menu a:hover{
     text-shadow: 1px solid black;
 }
 
-.principal h7t:hover{
+.principal h7:hover{
     color: rgb(255, 255, 255);
     background-color: rgba(0, 0, 0, 0.500);
 }
